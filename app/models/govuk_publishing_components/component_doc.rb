@@ -15,7 +15,7 @@ module GovukPublishingComponents
       @name = component[:name]
       @description = component[:description]
       @body = component[:body]
-      @accessibility_excluded_rules = component[:accessibility_excluded_rules]
+      @accessibility_excluded_rules = 'skip-link ' + component[:accessibility_excluded_rules].to_s
       @source = component[:source]
       @embed = component[:embed]
     end

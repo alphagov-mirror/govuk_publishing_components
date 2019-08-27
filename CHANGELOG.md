@@ -7,6 +7,10 @@
   useful summary for people upgrading their application, not a replication
   of the commit log.
 
+## Unreleased
+
+* Remove govuk_frontend_toolkit sass dependencies (PR #1069)
+
 ## 18.3.0
 
 * `value` and `name` can be set on button component (PR #1059)

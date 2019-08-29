@@ -47,6 +47,10 @@
   @include govuk-media-query($from: tablet) {
     line-height: 1.28;
   }
+
+  &:focus {
+    @include govuk-focused-text;
+  }
 }
 
 .gem-c-related-navigation__toggle {
@@ -62,10 +66,25 @@
 .gem-c-related-navigation__section-link {
   @extend %govuk-link;
   font-weight: bold;
+
+  &:focus {
+    @include govuk-focused-text;
+  }
 }
 
 .gem-c-related-navigation__section-link--other {
   font-weight: normal;
+
+  &:focus {
+    @include govuk-focused-text;
+  }
+}
+
+.gem-c-related-navigation__section-link--footer {
+
+  &:focus {
+    @include govuk-focused-text;
+  }
 }
 
 // reset the default browser styles

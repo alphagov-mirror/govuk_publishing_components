@@ -40,11 +40,6 @@
   list-style-type: none;
 }
 
-.gem-c-contents-list__link {
-  @include govuk-link-common;
-  @include govuk-link-style-default;
-}
-
 .gem-c-contents-list--no-underline {
   .gem-c-contents-list__link {
     text-decoration: none;
@@ -53,12 +48,20 @@
     &:active {
       text-decoration: underline;
     }
+
+    &:focus {
+      @include govuk-focused-text;
+    }
   }
 }
 
 .gem-c-contents-list__link {
   .gem-c-contents-list__list-item--parent > & {
     font-weight: bold;
+  }
+
+  &:focus {
+    @include govuk-focused-text;
   }
 }
 

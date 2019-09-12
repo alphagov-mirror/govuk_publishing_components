@@ -98,8 +98,18 @@ $yellow: #ffdd00;
   }
 
   // Target IE 9-11
-  @media screen and (min-width: 0\0) {
-    background-position: -8px center;
+  @media screen and (min-width: 0\0) and (max-width: 640px) {
+    background-size: 55% 100%;
+  }
+
+  @media screen and (min-width: 0\0) and (min-width: 641px) and (max-width: 769px) {
+    background-position: -20px center;
+    background-size: auto 100%;
+  }
+
+  @media screen and (min-width: 0\0) and (min-width: 770px) {
+    background-position: -14px center;
+    background-size: auto 100%;
   }
 }
 

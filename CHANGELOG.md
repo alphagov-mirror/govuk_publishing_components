@@ -7,6 +7,10 @@
   useful summary for people upgrading their application, not a replication
   of the commit log.
 
+## Unreleased
+
+* Fieldset custom legend size ([PR #1134](https://github.com/alphagov/govuk_publishing_components/pull/1134))
+
 ## 21.1.0
 
 * Add label size option for select ([PR #1131](https://github.com/alphagov/govuk_publishing_components/pull/1131))

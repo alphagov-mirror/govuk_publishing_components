@@ -10,6 +10,7 @@ PATH
       rake
       rouge
       sassc-rails (>= 2.0.1)
+      sprockets (~> 3.7.2)
 
 GEM
   remote: https://rubygems.org/
@@ -313,7 +314,6 @@ DEPENDENCIES
   pry-byebug
   rspec-rails (~> 3.8)
   selenium-webdriver (= 3.142.3)
-  sprockets (= 3.7.2)
   uglifier (>= 4.1.0)
   webmock (~> 3.6.0)
   yard

@@ -4,6 +4,7 @@
 // that are provided by Slimmer in public frontend applications.
 // = require jquery/dist/jquery
 // = require ./modules.js
+// = require ./lib/toggle.js
 
 $(document).ready(function () {
   'use strict'

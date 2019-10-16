@@ -1,0 +1,12 @@
+.gem-c-textarea {
+  .gem-c-label,
+  .gem-c-error-message,
+  .govuk-hint {
+    display: block;
+  }
+
+  .govuk-textarea {
+    width: 400px;
+    height: 40px;
+  }
+}

@@ -62,6 +62,15 @@ examples:
         <p>Your next of kin may need a strong stomach</p>
       schema: :faq
       canonical_url: https://www.gov.uk/how-to-train-your-dragon
+  government_service_schema:
+    data:
+      content_item:
+        title: "Apply for your first dragon"
+        base_path: "/apply-for-your-first-dragon"
+        details:
+          introductory_paragraph: "You can apply for your first dragon if you are at least 18 years old."
+          more_information: "You should be aware that dragons can be dangerous"
+      schema: :government_service
   person_schema:
     data:
       content_item:

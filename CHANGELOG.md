@@ -9,7 +9,7 @@
   
 ## Unreleased
 
-* Add GovernmentService schema.org schema ([PR #1177](https://github.com/alphagov/govuk_publishing_components/pull/1177))
+* Add GovernmentService schema.org schema to machine readable metadata component ([PR #1177](https://github.com/alphagov/govuk_publishing_components/pull/1177))
 
 ## 21.6.1
 

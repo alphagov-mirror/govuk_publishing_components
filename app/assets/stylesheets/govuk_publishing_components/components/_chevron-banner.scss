@@ -4,11 +4,6 @@ $yellow: #ffdd00;
 
 .gem-c-chevron-banner {
   position: relative;
-  width: 100%;
-
-  @include govuk-media-query(450px) {
-    width: 80%;
-  }
 }
 
 .gem-c-chevron-banner__chevron-point,
@@ -68,11 +63,16 @@ $yellow: #ffdd00;
   display: none;
 
   @include govuk-media-query(450px) {
-    display: block;
+    display: inline-block;
     height: 100%;
     position: absolute;
-    left: 99.8%;
+    left: 70%;
+    margin-left: (45px + govuk-spacing(4));
     top: 0;
+  }
+
+  @include govuk-media-query($from: 450px, $until: desktop) {
+    margin-left: (25px + govuk-spacing(2));
   }
 }
 
@@ -94,11 +94,12 @@ $yellow: #ffdd00;
 }
 
 .gem-c-chevron-banner__text {
-  display: table-cell;
+  display: block;
   position: relative;
   padding: govuk-spacing(4) 45px govuk-spacing(4) govuk-spacing(4);
   background-color: $red;
   border-radius: 5px;
+  box-sizing: border-box;
   width: 100%;
   border: 2px solid $red;
 
@@ -109,15 +110,8 @@ $yellow: #ffdd00;
   @include govuk-media-query($from: 450px) {
     border-radius: 5px 0 0 5px;
     border-right: 0;
-  }
-}
-
-.gem-c-chevron-banner__link {
-  position: relative;
-
-  @include govuk-media-query($from: 450px) {
-    display: table;
-    width: 80%;
+    width: 70%;
+    box-sizing: content-box;
   }
 }
 

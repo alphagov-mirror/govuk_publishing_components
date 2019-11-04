@@ -60,6 +60,14 @@ module GovukPublishingComponents
         content_item["schema_name"] == "specialist_document"
       end
 
+      def show_brexit_cta?
+        content_item.dig("links", "taxons").to_a.any? { |taxon| taxon["content_id"] == "d6c2de5d-ef90-45d1-82d4-5f2438369eea" }
+      end
+
+      def step_by_step_count
+        step_nav_helper.step_navs.count
+      end
+
       def content_tagged_to_current_step_by_step?
         # TODO: remove indirection here
         step_nav_helper.show_header?

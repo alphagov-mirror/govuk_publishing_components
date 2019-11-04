@@ -9,6 +9,7 @@
 
 ## Unreleased
 
+* Allow tracking on the details component ([PR #1187](https://github.com/alphagov/govuk_publishing_components/pull/1187))
 * Fix string merge in summary-list component ([PR #1188](https://github.com/alphagov/govuk_publishing_components/pull/1188))
 
 ## 21.8.1

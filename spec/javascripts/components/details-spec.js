@@ -37,7 +37,7 @@ describe('Details component', function () {
 
   it('uses built in tracking module when provided with a track-label', function () {
     tracker.start($element)
-    $element.find('.govuk-details__summary').trigger('click')
+    $element.find('.govuk-details__summary').click()
 
     expect(GOVUK.analytics.trackEvent.calls.count()).toEqual(0)
     expect(callback).toHaveBeenCalled()
@@ -49,7 +49,7 @@ describe('Details component', function () {
     $element.attr('data-track-label', null)
     tracker.start($element)
 
-    $element.find('.govuk-details__summary').trigger('click')
+    $element.find('.govuk-details__summary').click()
 
     expect(GOVUK.analytics.trackEvent.calls.count()).toEqual(0)
   })
@@ -58,7 +58,7 @@ describe('Details component', function () {
     $element.attr('data-track-label', null)
     tracker.start($element)
 
-    $element.find('.govuk-details__summary').trigger('click')
+    $element.find('.govuk-details__summary').click()
 
     expect(GOVUK.analytics.trackEvent).toHaveBeenCalledWith('track-category', 'track-action', { label: 'open' })
   })
@@ -68,7 +68,7 @@ describe('Details component', function () {
     $element.attr('open', true)
     tracker.start($element)
 
-    $element.find('.govuk-details__summary').trigger('click')
+    $element.find('.govuk-details__summary').click()
 
     expect(GOVUK.analytics.trackEvent).toHaveBeenCalledWith('track-category', 'track-action', { label: 'closed' })
   })

@@ -17,31 +17,26 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
       } else {
         // If no custom label is set, we use the open/close status as the label
         var detailsComponent = element[0]
-        var detailsClick = detailsComponent.querySelector('[data-details-track-click]')
-        var that = this
+        var summaryElement = detailsComponent.querySelector('[data-details-track-click]')
 
-        detailsClick.addEventListener('click', function () {
-          that.trackDefault(detailsComponent)
+        $(summaryElement).click(function (e) {
+          if (window.GOVUK.analytics && window.GOVUK.analytics.trackEvent) {
+            var componentStatus = (detailsComponent.getAttribute('open') == null) ? 'open' : 'closed'
+            var trackCategory = detailsComponent.getAttribute('data-track-category')
+            var trackAction = detailsComponent.getAttribute('data-track-action')
+            var trackOptions = detailsComponent.getAttribute('data-track-options')
+
+            if (typeof trackOptions !== 'object' || trackOptions === null) {
+              trackOptions = {}
+            }
+
+            trackOptions['label'] = componentStatus
+
+            if (trackAction && trackCategory) {
+              window.GOVUK.analytics.trackEvent(trackCategory, trackAction, trackOptions)
+            }
+          }
         })
-      }
-    }
-
-    this.trackDefault = function (element) {
-      if (window.GOVUK.analytics && window.GOVUK.analytics.trackEvent) {
-        var componentStatus = (element.getAttribute('open') == null) ? 'open' : 'closed'
-        var trackCategory = element.getAttribute('data-track-category')
-        var trackAction = element.getAttribute('data-track-action')
-        var trackOptions = element.getAttribute('data-track-options')
-
-        if (typeof trackOptions !== 'object' || trackOptions === null) {
-          trackOptions = {}
-        }
-
-        trackOptions['label'] = componentStatus
-
-        if (trackAction && trackCategory && window.GOVUK.analytics) {
-          window.GOVUK.analytics.trackEvent(trackCategory, trackAction, trackOptions)
-        }
       }
     }
   }

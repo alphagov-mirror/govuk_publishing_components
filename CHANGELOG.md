@@ -7,6 +7,10 @@
   useful summary for people upgrading their application, not a replication
   of the commit log.
 
+## 21.20.1
+
+* Change the dataset schema description ([#1260](https://github.com/alphagov/govuk_publishing_components/pull/1260))
+
 ## 21.20.0
 
 * Check for ordered related items and parent in breadcrumb logic ([#1257](https://github.com/alphagov/govuk_publishing_components/pull/1257))

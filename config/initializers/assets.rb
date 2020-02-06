@@ -29,6 +29,7 @@ Rails.application.config.assets.precompile += %w(
 # GOV.UK Frontend assets
 Rails.application.config.assets.precompile += %w(
   govuk-logotype-crown.png
+  accessible-autocomplete/dist/accessible-autocomplete.min.css
 )
 
 Rails.application.config.assets.paths += %W(

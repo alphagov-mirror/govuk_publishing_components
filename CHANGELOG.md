@@ -7,6 +7,10 @@
   useful summary for people upgrading their application, not a replication
   of the commit log.
 
+## Unreleased
+
+* Add visually hidden text to share links component ([PR #1286](https://github.com/alphagov/govuk_publishing_components/pull/1286))
+
 ## 21.22.1
 
 * Update govspeak button styles ([PR #1282](https://github.com/alphagov/govuk_publishing_components/pull/1282))

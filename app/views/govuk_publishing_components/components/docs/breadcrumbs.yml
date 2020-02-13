@@ -28,7 +28,6 @@ examples:
       - title: 'Sub-section'
         url: '/section/sub-section'
         title: 'Education of disadvantaged children'
-        is_current_page: true
       inverse: true
     context:
       dark_background: true
@@ -84,7 +83,6 @@ examples:
       - title: 'Education, training and skills'
         url: '/education'
       - title: 'Education of disadvantaged children'
-        is_current_page: true
   collapse_on_mobile:
     description: This is currently used within on pages tagged to the taxonomy, such as [on this page](https://www.gov.uk/guidance/pupil-premium-information-for-schools-and-alternative-provision-settings).
     data:

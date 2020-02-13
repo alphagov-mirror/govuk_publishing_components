@@ -47,11 +47,11 @@ module GovukPublishingComponents
       end
 
       def path
-        crumb[:is_current_page] ? '#content' : crumb[:url]
+        crumb[:url]
       end
 
       def aria_current
-        crumb[:is_current_page] ? 'page' : 'false'
+        'false'
       end
 
       def tracking_data(breadcrumbs_length)
@@ -82,7 +82,7 @@ module GovukPublishingComponents
       attr_reader :crumb, :index
 
       def list_item_item(request_path)
-        path = crumb[:is_current_page] ? request_path : crumb[:url]
+        path = crumb[:url]
         item = { "name" => crumb[:title] }
         item["@id"] = Plek.new.website_root + path if path
         item

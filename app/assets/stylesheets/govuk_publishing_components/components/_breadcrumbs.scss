@@ -22,6 +22,9 @@
 }
 
 @include govuk-media-query($until: tablet) {
+  .govuk-breadcrumbs {
+    margin: 28px 0;
+  }
   .govuk-breadcrumbs__list-item:not(:last-child):not(:first-child) {
     display: none;
   }

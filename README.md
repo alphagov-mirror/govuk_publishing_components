@@ -1,5 +1,6 @@
 GOV.UK Publishing Components ·
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![release](https://badgen.net/github/release/alphagov/govuk_publishing_components)](https://github.com/alphagov/govuk_publishing_components/releases/latest)
 =====================
 
 This gem:

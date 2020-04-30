@@ -9,6 +9,7 @@
 
 ## Unreleased
 
+* Add `exclusive` option to checkboxes component ([PR #1478](https://github.com/alphagov/govuk_publishing_components/pull/1478))
 * Fix margin on buttons with info text ([PR #1474](https://github.com/alphagov/govuk_publishing_components/pull/1474))
 
 ## 21.42.0

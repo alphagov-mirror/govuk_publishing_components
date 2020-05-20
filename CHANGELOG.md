@@ -8,6 +8,7 @@
   of the commit log.
 
 ## Unreleased
+* Add breadcrumbs from parent for html documents ([PR #1526] (https://github.com/alphagov/govuk_publishing_components/pull/1526)
 
 ## 21.52.0
 

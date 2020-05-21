@@ -7,9 +7,13 @@
   useful summary for people upgrading their application, not a replication
   of the commit log.
 
+## Unreleased
+
+* Tweak action link ([PR #1518](https://github.com/alphagov/govuk_publishing_components/pull/1518))
+
 ## 21.49.0
 
-* Add priority breadcrumb ([PR #1501] (https://github.com/alphagov/govuk_publishing_components/pull/1501))
+* Add priority breadcrumb ([PR #1501](https://github.com/alphagov/govuk_publishing_components/pull/1501))
 
 ## 21.48.0
 

@@ -9,6 +9,7 @@
 
 ## Unreleased
 
+* Add more font sizes to heading component ([PR #1587](https://github.com/alphagov/govuk_publishing_components/pull/1587))
 * Hide services cookie banner when JavaScript is disabled ([PR #1586](https://github.com/alphagov/govuk_publishing_components/pull/1586))
 
 ## 21.56.2

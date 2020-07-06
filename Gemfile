@@ -7,6 +7,11 @@ source "https://rubygems.org"
 # development dependencies will be added by default to the :development group.
 gemspec
 
+group :development, :test do
+  # The Jasmine Selenium runner needs `require: false` to work properly - and
+  # this doesn't seem to be an option in the `gemspec` file.
+  gem "jasmine_selenium_runner", require: false
+end
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
 # Git. Remember to move these dependencies to your gemspec before releasing

@@ -2,8 +2,6 @@ require "jasmine/runners/selenium"
 require "webdrivers/chromedriver"
 
 Jasmine.configure do |config|
-  config.prevent_phantom_js_auto_install = true
-
   config.runner = lambda { |formatter, jasmine_server_url|
     options = Selenium::WebDriver::Chrome::Options.new
     options.headless!

@@ -319,7 +319,7 @@ DEPENDENCIES
   govuk_schemas (~> 4.0)
   govuk_test (~> 1)
   jasmine (~> 3.5.1)
-  jasmine_selenium_runner
+  jasmine_selenium_runner (~> 3.0.0)
   pry-byebug
   rspec-rails (~> 4.0)
   rubocop-govuk (~> 3)

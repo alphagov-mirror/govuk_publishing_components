@@ -16,7 +16,8 @@ module GovukPublishingComponents
                   :description,
                   :heading_size,
                   :heading_caption,
-                  :has_exclusive
+                  :has_exclusive,
+                  :size
 
       def initialize(options)
         @items = options[:items] || []
@@ -35,14 +36,21 @@ module GovukPublishingComponents
 
         @id = options[:id] || "checkboxes-#{SecureRandom.hex(4)}"
         @heading = options[:heading] || nil
-        @heading_size = options[:heading_size]
-        @heading_size = "m" unless %w[s m l xl].include?(@heading_size)
         @heading_caption = options[:heading_caption] || nil
+        @heading_size = options[:heading_size] || nil
         @is_page_heading = options[:is_page_heading]
         @description = options[:description] || nil
         @no_hint_text = options[:no_hint_text]
         @hint_text = options[:hint_text] || "Select all that apply." unless @no_hint_text
         @visually_hide_heading = options[:visually_hide_heading]
+
+        @size = if %w[s m l xl].include?(@heading_size)
+                  @heading_size
+                elsif @is_page_heading
+                  "xl"
+                else
+                  "m"
+                end
       end
 
       # should have a fieldset if there's a heading, or if more than one checkbox
@@ -66,14 +74,14 @@ module GovukPublishingComponents
         if @is_page_heading
           content_tag(
             :legend,
-            class: "govuk-fieldset__legend govuk-fieldset__legend--xl gem-c-title",
+            class: "govuk-fieldset__legend govuk-fieldset__legend--#{@size}",
           ) do
-            concat content_tag(:span, heading_caption, class: "govuk-caption-xl") if heading_caption.present?
-            concat content_tag(:h1, @heading, class: "gem-c-title__text")
+            concat content_tag(:span, heading_caption, class: "govuk-caption-#{@size}") if heading_caption.present?
+            concat content_tag(:h1, @heading, class: "gem-c-checkboxes__heading-text govuk-fieldset__heading")
           end
         else
           classes = %w[govuk-fieldset__legend]
-          classes << "govuk-fieldset__legend--#{@heading_size}"
+          classes << "govuk-fieldset__legend--#{@size}"
           classes << "gem-c-checkboxes__legend--hidden" if @visually_hide_heading
 
           content_tag(:legend, @heading, class: classes)

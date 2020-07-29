@@ -5,7 +5,7 @@ require_relative "support/components_helper.rb"
 require "gds_api/test_helpers/content_store"
 require "faker"
 
-WebMock.disable_net_connect!(allow_localhost: true)
+WebMock.allow_net_connect!
 
 RSpec.configure do |config|
   config.example_status_persistence_file_path = "tmp/failures.txt"

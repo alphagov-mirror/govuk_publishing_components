@@ -10,6 +10,7 @@
 ## Unreleased
 
 * Add public/frontend layout component ([PR #1265](https://github.com/alphagov/govuk_publishing_components/pull/1265))
+* Add lang attribute to image card date/time element ([PR #1642](https://github.com/alphagov/govuk_publishing_components/pull/1642))
 
 ## 21.60.3
 

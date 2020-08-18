@@ -11,6 +11,7 @@
 
 * Add public/frontend layout component ([PR #1265](https://github.com/alphagov/govuk_publishing_components/pull/1265))
 * Replace jQuery in checkboxes.js ([PR #1620](https://github.com/alphagov/govuk_publishing_components/pull/1620))
+* Use collapsible breadcrumbs from govuk-frontend ([PR #1552](https://github.com/alphagov/govuk_publishing_components/pull/1552))
 
 ## 21.60.3
 

@@ -9,6 +9,7 @@
 
 ## Unreleased
 
+* Remove jquery from toggle code ([PR #1649](https://github.com/alphagov/govuk_publishing_components/pull/1649))
 * Add public/frontend layout component ([PR #1265](https://github.com/alphagov/govuk_publishing_components/pull/1265))
 * Replace jQuery in checkboxes.js ([PR #1620](https://github.com/alphagov/govuk_publishing_components/pull/1620))
 * Add lang attribute to image card date/time element ([PR #1642](https://github.com/alphagov/govuk_publishing_components/pull/1642))

@@ -7,6 +7,10 @@
   useful summary for people upgrading their application, not a replication
   of the commit log.
 
+## Unreleased
+
+* Remove jQuery from select.js ([PR #1670](https://github.com/alphagov/govuk_publishing_components/pull/1670))
+
 ## 21.66.4
 * Reorder image card elements ([PR #1695](https://github.com/alphagov/govuk_publishing_components/pull/1695)) FIX
 

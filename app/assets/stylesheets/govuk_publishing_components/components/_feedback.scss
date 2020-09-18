@@ -11,7 +11,6 @@
 // hide without js
 // show with js, unless also has the js-hidden class
 .gem-c-feedback__js-show,
-.gem-c-feedback__form,
 .gem-c-feedback__prompt-success,
 .gem-c-feedback__prompt-questions,
 .gem-c-feedback__error-summary {
@@ -24,6 +23,11 @@
       display: none;
     }
   }
+}
+
+// show the default feedback form without js
+.js-enabled .gem-c-feedback__form.js-hidden {
+  display: none;
 }
 
 .gem-c-feedback__prompt-questions {
@@ -65,6 +69,7 @@
 }
 
 .gem-c-feedback__prompt-question {
+  vertical-align: text-top;
   display: inline-block;
 
   // There's a global h3 rule in some layouts that interferes with this component
@@ -72,6 +77,8 @@
 
   margin-left: govuk-spacing(4);
   margin-right: govuk-spacing(4);
+  margin-top: govuk-spacing(2);
+  margin-bottom: govuk-spacing(2);
 
   &:focus {
     outline: 0;
@@ -83,9 +90,14 @@
 }
 
 .gem-c-feedback__prompt-link {
-  @include govuk-link-common;
   @include govuk-font(19);
-  display: inline-block;
+  box-shadow: 0 2px 0 govuk-colour("black");
+  min-width: 100%;
+
+  @include govuk-media-query($from: mobile) {
+    margin-bottom: 0;
+    min-width: 100px;
+  }
 
   @include govuk-media-query($from: tablet) {
     @include govuk-font(16);
@@ -116,12 +128,15 @@
 }
 
 .gem-c-feedback__option-list {
-  display: inline-block;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  margin-right: govuk-spacing(2);
   margin-top: govuk-spacing(2);
+
+  @include govuk-media-query($from: mobile) {
+    display: inline-block;
+    margin-right: govuk-spacing(2);
+  }
 
   @include govuk-media-query($from: tablet) {
     margin-top: 0;
@@ -129,11 +144,15 @@
 }
 
 .gem-c-feedback__option-list-item {
-  display: inline-block;
+  @include govuk-media-query($from: mobile) {
+    display: inline-block;
+  }
 }
 
 .gem-c-feedback__option-list-item:first-child {
-  margin-right: govuk-spacing(7);
+  @include govuk-media-query($from: mobile) {
+    margin-right: govuk-spacing(4); 
+  }
 }
 
 // Feedback form styles
@@ -206,15 +225,8 @@
 }
 
 .gem-c-feedback__close {
-  @include govuk-link-common;
-  @include govuk-link-style-default;
-  @include govuk-font(19);
   float: right;
   margin: 0 govuk-spacing(1) govuk-spacing(2) 0;
-
-  @include govuk-media-query($from: tablet) {
-    padding-top: 0;
-  }
 }
 
 .gem-c-feedback__email-link {

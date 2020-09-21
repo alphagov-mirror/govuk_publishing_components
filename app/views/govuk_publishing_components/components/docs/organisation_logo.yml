@@ -191,3 +191,12 @@ examples:
         brand: cabinet-office
         crest: 'single-identity'
       inline: true
+  with-explicit-language:
+    description: The language attribute on the name of the organisation defaults to `en`, but this can be overwritten if required.
+    data:
+      organisation:
+        name: Tŷ'r Cwmnïau
+        url: '/government/organisations/companies-house.cy'
+        brand: department-for-business-innovation-skills
+        crest: 'single-identity'
+      lang: "cy"

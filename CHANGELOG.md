@@ -10,6 +10,7 @@
 ## Unreleased
 
 * Add default aria-label for contents list component ([PR #1698](https://github.com/alphagov/govuk_publishing_components/pull/1698))
+* Replace feedback component links with buttons ([PR #1699](https://github.com/alphagov/govuk_publishing_components/pull/1699)) MINOR
 
 ## 21.66.2
 

@@ -192,7 +192,7 @@ examples:
         crest: 'single-identity'
       inline: true
   with-explicit-language:
-    description: The language attribute on the name of the organisation defaults to `en`, but this can be overwritten if required.
+    description: The language attribute on the name of the organisation can be set if required. If this option is not passed, no lang attribute is set.
     data:
       organisation:
         name: Tŷ'r Cwmnïau

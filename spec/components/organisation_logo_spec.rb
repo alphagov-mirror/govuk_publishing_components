@@ -103,7 +103,7 @@ describe "Organisation logo", type: :view do
 
   it "sets the language to en by default" do
     render_component(organisation: { name: "Name" })
-    assert_select ".gem-c-organisation-logo__name[lang='en']"
+    assert_select ".gem-c-organisation-logo__name[lang='en']", false
   end
 
   it "overrides the language when specified" do

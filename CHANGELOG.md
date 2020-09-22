@@ -13,6 +13,7 @@
 * Add language attribute to feed box ([PR #1706](https://github.com/alphagov/govuk_publishing_components/pull/1706))
 * Replace feedback component links with buttons ([PR #1699](https://github.com/alphagov/govuk_publishing_components/pull/1699)) MINOR
 * Extend contents list component ([PR #1710](https://github.com/alphagov/govuk_publishing_components/pull/1710))
+* Update step by step show/hide text to be more verbose for screen readers ([PR #1701](https://github.com/alphagov/govuk_publishing_components/pull/1701)) FIX
 
 ## 21.66.4
 

@@ -3,7 +3,7 @@
   aria_label ||= "Contents"
   format_numbers ||= false
   title_lang ||= false
-  title ||= t("components.contents_list.contents")
+  title = local_assigns[:title].presence || t("components.contents_list.contents")
   hide_title ||= false
   brand ||= false
   brand_helper = GovukPublishingComponents::AppHelpers::BrandHelper.new(brand)

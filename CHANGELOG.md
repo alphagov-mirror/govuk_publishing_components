@@ -11,6 +11,10 @@
 
 * Set feedback buttons to be transparent ([PR #1719](https://github.com/alphagov/govuk_publishing_components/pull/1719))
 
+## Unreleased
+
+* Feed subscription link accessibility fix ([PR #1721](https://github.com/alphagov/govuk_publishing_components/pull/1721))
+
 ## 21.67.2
 
 * Update step by step show/hide text to be more verbose for screen readers ([PR #1701](https://github.com/alphagov/govuk_publishing_components/pull/1701)) FIX

@@ -18,6 +18,7 @@
 
   .gem-c-subscription-links__list-item {
     display: inline-block;
+    vertical-align: middle;
     margin-right: govuk-spacing(4);
     margin-bottom: govuk-spacing(3);
 
@@ -41,7 +42,7 @@
     }
   }
 
-  .gem-c-subscription-links__link {
+  .gem-c-subscription-links__item {
     @extend %govuk-link;
     display: inline-block;
     text-decoration: none;
@@ -64,7 +65,9 @@
   }
 
   .gem-c-subscription-links__feed-hidden-description {
-    @include govuk-visually-hidden;
+    .js-enabled & {
+      @include govuk-visually-hidden;
+    }
   }
 }
 
@@ -81,42 +84,48 @@
 }
 
 .gem-c-subscription-links--with-feed-box {
-  .gem-c-subscription-links__list-item {
-    vertical-align: middle;
-  }
-
-  .gem-c-subscription-links__link {
-    &:not(.gem-c-subscription-links__link--feed) {
-      padding: govuk-spacing(2) govuk-spacing(2) govuk-spacing(2) 0;
-      border: 1px solid transparent;
-      border-bottom: 1px solid govuk-colour("dark-grey");
-
-      &:focus {
-        border-bottom: 0;
-      }
-    }
-  }
-
-  .gem-c-subscription-links__link--feed {
-    padding: govuk-spacing(2);
-    border: 1px solid $gem-quiet-button-colour;
-    color: $gem-quiet-button-colour;
-    background-color: $gem-secondary-button-background-colour;
-
-    &:visited,
-    &:active,
-    &:focus {
-      text-decoration: none;
-    }
+  .gem-c-subscription-links__item--link {
+    padding: govuk-spacing(2) govuk-spacing(2) govuk-spacing(2) 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid govuk-colour("dark-grey");
 
     &:focus {
-      border: 1px solid govuk-colour("yellow");
-      outline: 3px solid transparent;
+      border-bottom-color: transparent;
     }
+  }
+}
 
-    &:hover:not(:focus) {
-      background-color: $gem-secondary-button-hover-background-colour;
-      text-decoration: none;
-    }
+.gem-c-subscription-links__item--button {
+  display: none;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  padding: govuk-spacing(2);
+  border: 1px solid $gem-quiet-button-colour;
+  background-color: $gem-secondary-button-background-colour;
+
+  .js-enabled & {
+    display: inline-block;
+  }
+
+  &:not(.brand__color) {
+    color: $govuk-link-colour;
+  }
+
+  &:visited,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: $govuk-focus-text-colour;
+    border: 1px solid $govuk-focus-colour;
+    outline: 3px solid transparent;
+  }
+
+  &:hover:not(:focus) {
+    background-color: $gem-secondary-button-hover-background-colour;
+    text-decoration: none;
   }
 }

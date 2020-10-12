@@ -171,10 +171,18 @@
       color: govuk-colour("white");
     }
 
+    &:hover {
+      color: $gem-hover-dark-background;
+    }
+
     &:focus,
     &:active {
       text-decoration: none;
       color: govuk-colour("black");
+
+      &:hover {
+        color: govuk-colour("black");
+      }
     }
   }
 

@@ -7,7 +7,9 @@
   useful summary for people upgrading their application, not a replication
   of the commit log.
 
-## Unreleased
+## 23.0.0
+
+Note - this is version 23.0.0 due to a previously yanked version using 22.0.0; this release is unrelated to the yanked version.
 
 * Add heading option to input component ([PR #1747](https://github.com/alphagov/govuk_publishing_components/pull/1747)) MINOR
 * Add analytics from static ([PR #1745](https://github.com/alphagov/govuk_publishing_components/pull/1745)) MINOR

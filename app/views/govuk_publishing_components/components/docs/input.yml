@@ -132,6 +132,13 @@ examples:
         text: "What is your name?"
       name: "name"
       heading_size: "l"
+  with_label_as_heading:
+    description: Wraps the label in a heading tag. Valid options are 1 to 6. Note that the size of the label/heading is still determined by the `heading_size` option, so if it isn't specified it won't look like a heading. Based on the [heading/label pattern](https://design-system.service.gov.uk/patterns/question-pages/) in the Design System.
+    data:
+      label:
+        text: "This is a heading 1, but doesn't look like one"
+      name: "name"
+      heading_level: 1
   with_prefix:
     description: To help users understand how the input should look like. Often used for units of measurement.
     data:

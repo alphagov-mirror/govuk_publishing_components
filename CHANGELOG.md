@@ -7,6 +7,10 @@
   useful summary for people upgrading their application, not a replication
   of the commit log.
 
+## Unreleased
+
+* Fix orange outline on global site search ([PR #1752](https://github.com/alphagov/govuk_publishing_components/pull/1752))
+
 ## 23.0.0
 
 Note - this is version 23.0.0 due to a previously yanked version using 22.0.0; this release is unrelated to the yanked version.

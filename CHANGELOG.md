@@ -9,6 +9,7 @@
 
 ## Unreleased
 
+* Fix text overflow bug in Firefox ([PR #1764](https://github.com/alphagov/govuk_publishing_components/pull/1764))
 * Hide native browser show password ([PR #1863](https://github.com/alphagov/govuk_publishing_components/pull/1863))
 
 ## 23.12.1

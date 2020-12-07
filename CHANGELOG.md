@@ -10,6 +10,7 @@
 ## Unreleased
 
 * Fix for search input misalignment ([PR #1823](https://github.com/alphagov/govuk_publishing_components/pull/1823))
+* Add a data attribute to indicate a link or form should be decorated as if it were a cross-domain link ([PR #1811](https://github.com/alphagov/govuk_publishing_components/pull/1811))
 
 ## 23.9.1
 

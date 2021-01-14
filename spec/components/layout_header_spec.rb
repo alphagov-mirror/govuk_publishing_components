@@ -64,14 +64,14 @@ describe "Layout header", type: :view do
     assert_select ".gem-c-header__nav[aria-label='Top level']"
   end
 
-  it "renders the header navigation items with custom aria-label when navigation_items_label is specified" do
+  it "renders the header navigation items with custom aria-label when navigation_aria_label is specified" do
     navigation_items = [
       { text: "Foo", href: "/foo", active: true },
       { text: "Bar", href: "/bar" },
       { text: "Hello", href: "/hello", show_only_in_collapsed_menu: true },
     ]
 
-    render_component(environment: "staging", navigation_items: navigation_items, navigation_items_label: "My fancy label")
+    render_component(environment: "staging", navigation_items: navigation_items, navigation_aria_label: "My fancy label")
 
     assert_select ".gem-c-header__nav[aria-label='My fancy label']"
   end

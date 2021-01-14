@@ -64,7 +64,7 @@ examples:
     description: The navigation has `aria-label="Top level"` by default. This option is here for when the `aria-label` needs to be more descriptive than that.
     data:
       search_left: true
-      navigation_items_label: "Departments and policy"
+      navigation_aria_label: "Departments and policy"
       navigation_items:
       - text: Departments
         href: "item-1"

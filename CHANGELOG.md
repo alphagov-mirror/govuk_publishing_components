@@ -10,6 +10,7 @@
 ## Unreleased
 
 * Add print styling for magna charta component ([PR #1867](https://github.com/alphagov/govuk_publishing_components/pull/1867))
+* Change GOVUK Modules scope to document ([PR #1869](https://github.com/alphagov/govuk_publishing_components/pull/1869))
 
 ## 23.12.2
 

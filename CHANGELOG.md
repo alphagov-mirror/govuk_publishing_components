@@ -7,6 +7,10 @@
   useful summary for people upgrading their application, not a replication
   of the commit log.
 
+## Unreleased
+
+* BREAKING: Remove chevron banner component ([PR #1873](https://github.com/alphagov/govuk_publishing_components/pull/1873))
+
 ## 23.13.1
 
 * Bump govuk-frontend from 3.9.1 to 3.10.2 ([PR #1838](https://github.com/alphagov/govuk_publishing_components/pull/1838))

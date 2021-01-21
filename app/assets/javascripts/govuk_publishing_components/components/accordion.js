@@ -1,5 +1,8 @@
+/* global nodeListForEach */
 //  = require ../vendor/polyfills/closest.js
 //  = require ../vendor/polyfills/indexOf.js
+//  = require ../vendor/polyfills/common.js
+
 window.GOVUK = window.GOVUK || {}
 window.GOVUK.Modules = window.GOVUK.Modules || {};
 
@@ -7,10 +10,9 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
   function GovukAccordion () { }
 
   GovukAccordion.prototype.start = function ($module) {
-    // TODO rename module var to remove jQuery
-    this.module = $module[0]
-    this.moduleId = this.module.getAttribute('id')
-    this.$sections = this.module.querySelectorAll('.govuk-accordion__section')
+    this.$module = $module[0]
+    this.moduleId = this.$module.getAttribute('id')
+    this.$sections = this.$module.querySelectorAll('.govuk-accordion__section')
     this.$openAllButton = ''
     this.browserSupportsSessionStorage = helper.checkForSessionStorage()
     this.controlsClass = 'govuk-accordion__controls'
@@ -25,7 +27,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     this.sectionShowHideIconClass = 'gem-c-accordion__toggle-link'
 
     // Indicate that js has worked
-    this.module.classList.add('gem-c-accordion--active')
+    this.$module.classList.add('gem-c-accordion--active')
 
     this.initControls()
     this.initSectionHeaders()
@@ -50,7 +52,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     var accordionControls = document.createElement('div')
     accordionControls.setAttribute('class', this.controlsClass)
     accordionControls.appendChild(this.$openAllButton)
-    this.module.insertBefore(accordionControls, this.module.firstChild)
+    this.$module.insertBefore(accordionControls, this.$module.firstChild)
 
     // Handle events for the controls
     this.$openAllButton.addEventListener('click', this.onOpenOrCloseAllToggle.bind(this))
@@ -59,7 +61,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
   // Initialise section headers
   GovukAccordion.prototype.initSectionHeaders = function () {
     // Loop through section headers
-    Array.from(this.$sections, function ($section, i) {
+    nodeListForEach(this.$sections, function ($section, i) {
       // Set header attributes
       var header = $section.querySelector('.' + this.sectionHeaderClass)
       this.initHeaderAttributes(header, i)
@@ -135,7 +137,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
 
     var nowExpanded = !this.checkIfAllSectionsOpen()
 
-    Array.from($sections, function ($section) {
+    nodeListForEach($sections, function ($section) { // eslint-disable-line
       module.setExpanded(nowExpanded, $section)
       // Store the state in sessionStorage when a change is triggered
       module.storeState($section)
@@ -148,8 +150,8 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
   GovukAccordion.prototype.setExpanded = function (expanded, $section) {
     var $button = $section.querySelector('.' + this.sectionButtonClass)
     var $showHideIcon = $section.querySelector('.' + this.sectionShowHideIconClass)
-    var $srPause =  '<span class="govuk-visually-hidden">, </span>'
-    var $showHideIconAddtionalText =  '<span class="govuk-visually-hidden">this section</span'
+    var $srPause = '<span class="govuk-visually-hidden">, </span>'
+    var $showHideIconAddtionalText = '<span class="govuk-visually-hidden">this section</span'
     $button.setAttribute('aria-expanded', expanded)
 
     if (expanded) {
@@ -175,7 +177,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     // Get a count of all the Accordion sections
     var sectionsCount = this.$sections.length
     // Get a count of all Accordion sections that are expanded
-    var expandedSectionCount = this.module.querySelectorAll('.' + this.sectionExpandedClass).length
+    var expandedSectionCount = this.$module.querySelectorAll('.' + this.sectionExpandedClass).length
     var areAllSectionsOpen = sectionsCount === expandedSectionCount
 
     return areAllSectionsOpen
@@ -192,7 +194,6 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     } else {
       this.$openAllButton.classList.remove(this.openAllExpandedClass)
     }
-
   }
 
   var helper = {

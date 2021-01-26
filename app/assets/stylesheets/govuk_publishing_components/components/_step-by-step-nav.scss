@@ -1,5 +1,5 @@
 $stroke-width: 1px;
-$number-circle-size: 26px;
+$number-circle-size: 30px;
 $number-circle-size-large: 35px;
 $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
 
@@ -255,7 +255,7 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
 }
 
 .gem-c-step-nav__circle--number {
-  @include step-nav-font(16, $weight: bold, $line-height: 25px);
+  @include step-nav-font(16, $weight: bold, $line-height: 29px);
   border: solid $stroke-width govuk-colour("mid-grey", $legacy: "grey-2");
 
   .gem-c-step-nav--large & {

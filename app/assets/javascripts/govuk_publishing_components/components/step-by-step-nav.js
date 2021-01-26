@@ -76,8 +76,8 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     var showall = document.createElement('div')
     showall.className = 'gem-c-step-nav__controls'
     showall.innerHTML = '<button aria-expanded="false" class="gem-c-step-nav__button gem-c-step-nav__button--controls js-step-controls-button">' +
-      this.$module.downChevronSvg +
       this.$module.actions.showAllText +
+      this.$module.downChevronSvg +
       '</button>'
 
     var steps = this.$module.querySelectorAll('.gem-c-step-nav__steps')[0]
@@ -353,9 +353,9 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     var shownSteps = this.$module.querySelectorAll('.step-is-shown').length
     // Find out if the number of is-opens == total number of steps
     if (shownSteps === this.$module.totalSteps) {
-      this.$module.showOrHideAllButton.innerHTML = this.$module.upChevronSvg + this.$module.actions.hideAllText
+      this.$module.showOrHideAllButton.innerHTML = this.$module.actions.hideAllText + this.$module.upChevronSvg
     } else {
-      this.$module.showOrHideAllButton.innerHTML = this.$module.downChevronSvg + this.$module.actions.showAllText
+      this.$module.showOrHideAllButton.innerHTML = this.$module.actions.showAllText + this.$module.downChevronSvg
     }
   }
 
@@ -394,7 +394,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
 
       this.titleButton.setAttribute('aria-expanded', isShown)
       var showHideText = this.stepElement.querySelectorAll('.js-toggle-link')[0]
-      showHideText.innerHTML = isShown ? this.upChevronSvg + this.hideText : this.downChevronSvg + this.showText
+      showHideText.innerHTML = isShown ? this.hideText + this.upChevronSvg : this.showText + this.downChevronSvg
     }
 
     this.isShown = function () {

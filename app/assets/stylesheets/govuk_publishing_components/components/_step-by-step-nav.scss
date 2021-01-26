@@ -134,13 +134,9 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
 }
 
 .gem-c-step-nav__chevron {
-  display: none;
-
-  .gem-c-step-nav--large & {
-    display: inline;
-    vertical-align: text-top;
-    margin-right: govuk-spacing(1);
-  }
+  display: inline;
+  vertical-align: middle;
+  margin-left: govuk-spacing(1);
 }
 
 .gem-c-step-nav__steps {
@@ -241,11 +237,11 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
 }
 
 .gem-c-step-nav__circle--number {
-  @include step-nav-font(16, $weight: bold, $line-height: 23px);
+  @include step-nav-font(16, $weight: bold, $line-height: 25px);
   border: solid $stroke-width govuk-colour("mid-grey", $legacy: "grey-2");
 
   .gem-c-step-nav--large & {
-    @include step-nav-font(16, $tablet-size: 19, $weight: bold, $line-height: 23px, $tablet-line-height: 34px);
+    @include step-nav-font(16, $tablet-size: 19, $weight: bold, $line-height: 25px, $tablet-line-height: 34px);
   }
 
   .gem-c-step-nav__step--active & {

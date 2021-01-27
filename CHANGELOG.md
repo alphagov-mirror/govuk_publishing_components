@@ -12,6 +12,7 @@
 * Update Brexit CTA on contextual sidebar ([PR #1888](https://github.com/alphagov/govuk_publishing_components/pull/1888))
 * Fix footer classes ([PR #1898](https://github.com/alphagov/govuk_publishing_components/pull/1898))
 * Update document list component with description text modifier and amended design ([PR #1883](https://github.com/alphagov/govuk_publishing_components/pull/1883))
+* Further step by step nav sidebar design updates ([PR #1893](https://github.com/alphagov/govuk_publishing_components/pull/1893))
 
 ## 23.13.1
 

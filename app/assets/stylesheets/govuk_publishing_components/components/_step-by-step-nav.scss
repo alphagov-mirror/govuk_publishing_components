@@ -104,7 +104,7 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
       color: govuk-colour("black");
     }
 
-    @include step-nav-chevron-focus-state();
+    @include step-nav-chevron-focus-state;
   }
 }
 
@@ -124,7 +124,7 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
   }
 
   &:focus {
-    @include step-nav-chevron-focus-state();
+    @include step-nav-chevron-focus-state;
   }
 }
 
@@ -271,7 +271,7 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
 
     .gem-c-step-nav__circle-background {
       text-shadow: none;
-      color: govuk-colour("white")
+      color: govuk-colour("white");
     }
   }
 }

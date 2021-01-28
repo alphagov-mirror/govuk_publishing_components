@@ -9,6 +9,7 @@
 
 ## Unreleased
 
+* Remove duplicate `lib/auto-track-event` script ([PR #1894](https://github.com/alphagov/govuk_publishing_components/pull/1894))
 * Update document list component with description text modifier and amended design ([PR #1883](https://github.com/alphagov/govuk_publishing_components/pull/1883))
 
 ## 23.13.1

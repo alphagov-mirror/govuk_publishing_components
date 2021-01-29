@@ -31,3 +31,8 @@
 .gem-c-accordion__toggle-link {
   display: none !important; // stylelint-disable-line declaration-no-important
 }
+
+// Hide all hidden content
+.gem-c-accordion .govuk-visually-hidden {
+  display: none !important; // stylelint-disable-line declaration-no-important
+}

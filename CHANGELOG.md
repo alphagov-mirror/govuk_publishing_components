@@ -7,7 +7,7 @@
   useful summary for people upgrading their application, not a replication
   of the commit log.
 
-## Unreleased
+## 23.14.0
 
 * Update document list component with description text modifier and amended design ([PR #1883](https://github.com/alphagov/govuk_publishing_components/pull/1883))
 

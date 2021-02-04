@@ -115,6 +115,8 @@ $gem-c-accordion-bottom-border-width: 1px;
     display: inline-block;
     width: em(20, 16);
     height: em(20, 16);
+    overflow: visible;
+    margin-left: em(5, 16);
   }
 
   // Buttons within the headers don’t need default styling
@@ -205,12 +207,12 @@ $gem-c-accordion-bottom-border-width: 1px;
 
   // Setting width so Chervon toggle doesn't jump when toggled
   .gem-c-accordion__toggle-text {
-    width: em(45, 16);
+    min-width: em(40, 16);
     display: inline-block;
   }
 
   .gem-c-accordion__open-all-text {
-    width: em(130, 16);
+    min-width: em(120, 16);
     display: inline-block;
     text-align: left;
   }

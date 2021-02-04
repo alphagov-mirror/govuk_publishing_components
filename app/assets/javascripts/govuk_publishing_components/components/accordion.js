@@ -31,6 +31,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     this.toggleLinkClass = 'js-toggle-link'
 
     // SVG Arrow icons
+    // TODO convert to external files, add inline helper.
     this.upChevronSvg = '<svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="gem-c-accordion-nav__chevron gem-c-accordion-nav__chevron--up">' +
       '<path class="gem-c-accordion-nav__chevron--stroke" d="M19.5 10C19.5 15.2467 15.2467 19.5 10 19.5C4.75329 19.5 0.499997 15.2467 0.499998 10C0.499999 4.7533 4.7533 0.500001 10 0.500002C15.2467 0.500003 19.5 4.7533 19.5 10Z" stroke="#1D70B8"/>' +
       '<path class="gem-c-accordion-nav__chevron--stroke" d="M6.32617 12.3262L10 8.65234L13.6738 12.3262" stroke="#1D70B8" stroke-width="2"/>' +
@@ -57,12 +58,18 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     this.openAllButton = document.createElement('button')
     this.openAllButton.setAttribute('class', this.openAllClass)
     this.openAllButton.setAttribute('aria-expanded', 'false')
+    this.openAllButton.innerHTML = this.downChevronSvg
 
     // Create control wrapper and add controls to it
     var accordionControls = document.createElement('div')
     accordionControls.setAttribute('class', this.controlsClass)
     accordionControls.appendChild(this.openAllButton)
     this.$module.insertBefore(accordionControls, this.$module.firstChild)
+
+    // Build addtional wrapper for open all toggle text, place icon after wrapped text.
+    var wrapperOpenAllText = document.createElement('span')
+    wrapperOpenAllText.classList.add(this.openAllTextClass)
+    this.openAllButton.insertBefore(wrapperOpenAllText, this.openAllButton.childNodes[0] || null)
 
     // Handle events for the controls
     this.openAllButton.addEventListener('click', this.onOpenOrCloseAllToggle.bind(this))
@@ -104,13 +111,19 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
 
     // Add pause after heading for assistive technology.
     var srPause = document.createElement('span')
-    srPause.setAttribute('class', 'govuk-visually-hidden')
+    srPause.classList.add('govuk-visually-hidden')
     srPause.innerHTML = ', '
 
-    // Build addtional copy for assistive tech
+    // Build addtional copy for assistive technology
     var srAddtionalCopy = document.createElement('span')
-    srAddtionalCopy.setAttribute('class', 'govuk-visually-hidden')
+    srAddtionalCopy.classList.add('govuk-visually-hidden')
     srAddtionalCopy.innerHTML = ' this section'
+
+    // Build addtional wrapper for toggle text, place icon after wrapped text.
+    var wrapperShowHideIcon = document.createElement('span')
+    wrapperShowHideIcon.classList.add(this.sectionShowHideTextClass)
+    showIcons.innerHTML = this.upChevronSvg
+    showIcons.insertBefore(wrapperShowHideIcon, showIcons.childNodes[0] || null)
 
     // Copy all attributes (https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes) from span to button
     for (var i = 0; i < span.attributes.length; i++) {
@@ -118,6 +131,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
       button.setAttribute(attr.nodeName, attr.nodeValue)
     }
 
+    // Alter focus styles to wider parent element
     button.addEventListener('focusin', function (e) {
       if (!headerWrapper.classList.contains(module.sectionHeaderFocusedClass)) {
         headerWrapper.className += ' ' + module.sectionHeaderFocusedClass
@@ -171,17 +185,21 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
   // Set section attributes when opened/closed
   GemAccordion.prototype.setExpanded = function (expanded, section) {
     var showHideIcon = section.querySelector('.' + this.sectionShowHideIconClass)
+    var showHideIconText = section.querySelector('.' + this.sectionShowHideTextClass)
     var button = section.querySelector('.' + this.sectionButtonClass)
+    var newButtonText = expanded ? 'Hide' : 'Show'
 
+    showHideIconText.innerHTML = newButtonText
     button.setAttribute('aria-expanded', expanded)
     button.classList.add(this.toggleLinkClass)
 
+    // Swap icon, change class
     if (expanded) {
       section.classList.add(this.sectionExpandedClass)
-      showHideIcon.innerHTML = '<span class="' + this.sectionShowHideTextClass + '">Hide</span>' + this.upChevronSvg
+      showHideIcon.querySelector('svg').outerHTML = this.upChevronSvg
     } else {
       section.classList.remove(this.sectionExpandedClass)
-      showHideIcon.innerHTML = '<span class="' + this.sectionShowHideTextClass + '">Show</span>' + this.downChevronSvg
+      showHideIcon.querySelector('svg').outerHTML = this.downChevronSvg
     }
 
     // See if "Show all sections" button text should be updated
@@ -207,14 +225,18 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
 
   // Update "Show all sections" button
   GemAccordion.prototype.updateOpenAllButton = function (expanded) {
-    var newButtonText = expanded ? '<span class="' + this.openAllTextClass + '">Close all sections</span>' + this.upChevronSvg : '<span class="' + this.openAllTextClass + '">Show all sections</span>' + this.downChevronSvg
+    var openAllCopy = this.$module.querySelector('.' + this.openAllTextClass)
+    var newButtonText = expanded ? 'Close all sections' : 'Show all sections'
     this.openAllButton.setAttribute('aria-expanded', expanded)
-    this.openAllButton.innerHTML = newButtonText
+    openAllCopy.innerHTML = newButtonText
 
+    // Swap icon, toggle class
     if (expanded) {
       this.openAllButton.classList.add(this.openAllExpandedClass)
+      this.openAllButton.querySelector('svg').outerHTML = this.upChevronSvg
     } else {
       this.openAllButton.classList.remove(this.openAllExpandedClass)
+      this.openAllButton.querySelector('svg').outerHTML = this.downChevronSvg
     }
   }
 

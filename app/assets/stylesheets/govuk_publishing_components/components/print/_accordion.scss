@@ -25,7 +25,7 @@
   @include govuk-typography-responsive($size: 16, $important: true);
 }
 
-// Hide the unusable "Open all" button and the "+" icons.
+// Hide the unusable "Show all sections" button and the "Chevron" icons.
 .gem-c-accordion__open-all,
 .gem-c-accordion__icon,
 .gem-c-accordion__toggle-link {

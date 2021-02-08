@@ -17,10 +17,6 @@
   <%= tag.div(class: accordion_classes, id: id, data: data_attributes) do %>
     <% items.each_with_index do |item, i| %>
       <%
-        # Nunjucks starts a loop on 1 and the client side JavaScript also
-        # adopts this behaviour. To prevent things from breaking, the index
-        # here also need to be increase by one. (Nunjucks is used by GOV.UK
-        # Frontend, which this component is based on.)
         index = i + 1
 
         item[:data_attributes] ||= nil
@@ -38,7 +34,7 @@
           <% end %>
           <%= tag.div(item[:summary][:text], id: "#{id}-summary-#{index}", class: summary_classes) if item[:summary].present? %>
         </div>
-        <%= tag.div(item[:content][:html], id: "#{id}-content-#{index}", class: "gem-c-accordion__section-content", 'aria-labelledby': "#{id}-heading-#{index}") %>
+        <%= tag.div(item[:content][:html], id: "#{id}-content-#{index}", class: "gem-c-accordion__section-content", 'aria-label': "#{item[:heading][:text]}") %>
       <% end %>
     <% end %>
   <% end %>

@@ -69,26 +69,27 @@ $gem-c-accordion-bottom-border-width: 1px;
   .gem-c-accordion-nav__chevron {
     vertical-align: text-top;
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
+    width: em(20, 16);
+    height: em(20, 16);
+    margin-left: em(5, 16);
     box-sizing: border-box;
     position: relative;
-    border: 1px solid;
-    border-radius: 100px;
+    border: em(1, 16) solid;
+    border-radius: em(100, 16);
 
     &:after {
       content: "";
       display: block;
       box-sizing: border-box;
       position: absolute;
-      width: 6px;
-      height: 6px;
-      border-top: 2px solid;
-      border-right: 2px solid;
+      width: em(6, 16);
+      height: em(6, 16);
+      border-top: em(2, 16) solid;
+      border-right: em(2, 16) solid;
       transform: rotate(-45deg);
-      left: 6px;
-      bottom: 5px;
+      left: em(6, 16);
+      bottom: em(5, 16);
+      overflow: visible;
     }
   }
 
@@ -262,13 +263,27 @@ $gem-c-accordion-bottom-border-width: 1px;
       padding-bottom: govuk-spacing(5);
     }
 
-    // Reduce the size of the icons to match reduction in text
+    // Reduce Chevron size
     .gem-c-accordion-nav__chevron {
-      transform: scale(.9);
+      width: em(20, 14);
+      height: em(20, 14);
+      margin-left: em(5, 14);
+      border: em(1, 14) solid;
+      border-radius: em(100, 14);
+      transform: scale(.875);
+
+      &:after {
+        width: em(6, 14);
+        height: em(6, 14);
+        border-top: em(2, 14) solid;
+        border-right: em(2, 14) solid;
+        left: em(6, 14);
+        bottom: em(5, 14);
+      }
     }
 
     .gem-c-accordion-nav__chevron--down {
-      transform: rotate(180deg) scale(.9);
+      transform: scale(.875) rotate(180deg);
     }
 
     .gem-c-accordion__section-summary {

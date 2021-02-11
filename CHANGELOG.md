@@ -7,6 +7,10 @@
   useful summary for people upgrading their application, not a replication
   of the commit log.
 
+## Unreleased
+
+* Remove redundant import in accordion component ([PR #1923](https://github.com/alphagov/govuk_publishing_components/pull/1923))
+
 ## 24.1.0
 
 * Update `data-module` on layout header and footer ([PR #1913](https://github.com/alphagov/govuk_publishing_components/pull/1913))
